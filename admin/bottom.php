@@ -3,8 +3,8 @@
 					<form method="post"  action="./api/add.php">
 						<table width="100%">
 							<?php
-								$table='Bottom';
-								$direct=strtolower($table);
+								$table=ucfirst($_GET['do']);
+								$direct=$_GET['do'];
 								$row=$$table->find(1);
 								?>
 							<tbody>

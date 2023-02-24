@@ -14,21 +14,22 @@ if(isset($_POST['id'])){
     foreach($_POST['id'] as $idx=>$id){
         if(isset($_POST['del'])&&in_array($id,$_POST['del'])){
             $$table->del($id);
-        }
-        foreach($_POST as $col=>$val){
-            if($col!='del'&&$col!='sh'){
-                $data[$col]=$val[$idx];
-            }
-
-            if($col=='sh'){
-                if(is_array($val)){
-                    $data[$col]=in_array($id,$val)?1:0;
-                }else{
-                    $data[$col]=$val==$id?1:0;
+        }else{
+            foreach($_POST as $col=>$val){
+                if($col!='del'&&$col!='sh'){
+                    $data[$col]=$val[$idx];
+                }
+    
+                if($col=='sh'){
+                    if(is_array($val)){
+                        $data[$col]=in_array($id,$val)?1:0;
+                    }else{
+                        $data[$col]=$val==$id?1:0;
+                    }
                 }
             }
+            $$table->save($data);
         }
-        $$table->save($data);
     }
 }
 

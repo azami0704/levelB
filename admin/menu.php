@@ -12,8 +12,8 @@
 									<td></td>
 								</tr>
 								<?php
-								$table='Menu';
-								$direct=strtolower($table);
+								$table=ucfirst($_GET['do']);
+								$direct=$_GET['do'];
 								$rows=$$table->all(['main'=>0]);
 								foreach($rows as $row){
 									?>

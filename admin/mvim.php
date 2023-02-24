@@ -10,8 +10,8 @@
 									<td></td>
 								</tr>
 								<?php
-								$table='Mvim';
-								$direct=strtolower($table);
+								$table=ucfirst($_GET['do']);
+								$direct=$_GET['do'];
 								$rows=$$table->all();
 								foreach($rows as $row){
 									?>

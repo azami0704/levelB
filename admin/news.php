@@ -10,8 +10,8 @@
 									<td></td>
 								</tr>
 								<?php
-								$table='News';
-								$direct=strtolower($table);
+								$table=ucfirst($_GET['do']);
+								$direct=$_GET['do'];
 								$div=4;
 								$all=ceil($$table->count(1)/$div);
 								$act=$_GET['p']??1;
