@@ -15,7 +15,7 @@ if(isset($_POST['id'])){
             $$table->del($id);
         }
         foreach($_POST as $col=>$val){
-            if($col!='del'&&$col!='sh'&&$col!='ntext'&&$col!='nurl'){
+            if($col=='text'||$col=='url'||$col=='id'){
                 $data[$col]=$val[$idx];
             }
         }
